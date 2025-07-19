@@ -4,8 +4,6 @@ import { FilterItem } from '../shared/api/types/Filter/FilterItem'
 import { FilterType } from '../shared/api/types/Filter/FilterType'
 import filterData from '../shared/temp/filterData.json'
 
-// <-- ЭТОТ ИМПОРТ ВАЖЕН
-
 export const useFilters = () => {
 	return useQuery<FilterItem[], Error>({
 		queryKey: ['filters'],
