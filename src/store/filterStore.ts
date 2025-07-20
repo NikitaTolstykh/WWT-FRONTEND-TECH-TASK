@@ -1,17 +1,15 @@
 import { create } from 'zustand'
 
-export interface SelectedFilters {
-	[filterId: string]: string[]
-}
+import { SearchRequestFilter } from '@/shared/api/types/SearchRequest/SearchRequestFilter'
 
 interface FilterState {
-	selectedFilters: SelectedFilters
-	setFilters: (filters: SelectedFilters) => void
+	selectedFilters: SearchRequestFilter
+	setFilters: (filters: SearchRequestFilter) => void
 	resetFilters: () => void
 }
 
 export const useFilterStore = create<FilterState>(set => ({
-	selectedFilters: {},
+	selectedFilters: [],
 	setFilters: filters => set({ selectedFilters: filters }),
-	resetFilters: () => set({ selectedFilters: {} })
+	resetFilters: () => set({ selectedFilters: [] })
 }))
